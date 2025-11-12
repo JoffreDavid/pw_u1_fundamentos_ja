@@ -25,11 +25,15 @@ function mostrarDisplay(valor) {
     }
 
     else if (valor === '%') {
-        if (display.innerText) {
-            let actual = parseFloat(display.innerText);
-            display.innerText = operador && num1 ? (num1 * actual) / 100 : actual / 100;
-        }
+    if (num1 !== null && operador) {
+        let partes = display.innerText.split(/[\+\-\*\/]/);
+        let num2 = parseFloat(partes.pop());
+        let resultado = calcular(num1, num2, '%');
+        display.innerText = resultado;
+        num1 = resultado;
+        operador = null;
     }
+}
 
     else if (valor === '=') {
         if (operador !== null) {
@@ -59,6 +63,7 @@ function calcular(a, b, op) {
         case '-': return a - b;
         case '*': return a * b;
         case '/': return b !== 0 ? a / b : "Error";
+        case '%': return (a * b) / 100;
         default: return b;
     }
 }
