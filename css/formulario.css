@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background: lime;
+}
+
+/*habilita el contenido del atributo type*/
+p:before {
+    content: attr(type);
+    display: block;
+    /*display block hace que ocupe el bloq completo, no lo comparte con nadie*/
+    font-size: 20px;
+    color: brown;
+    margin-top: 15;
+
+}
+
+input {
+    width: 250px;
+    border: none;
+    border-bottom: 2px solid black;
+    color: red;
+}
+.formulario {
+    background: rgb(57, 156, 212);
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 10px 30px black;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(235, 62, 70);
+}
+
+button {
+
+    background: aqua;
+    margin: 20px;
+    padding: 10px 20px;
+    border-radius: 7px;
+    color: red;
+}
+.centrar-boton{
+
+    display: flex;
+    justify-content: center;
+}
+
+h2, header {
+    color: rgb(85, 42, 165);
+    border-bottom: 2px solid black;
+    font-size: 30px;
+}
+
